@@ -1,0 +1,31 @@
+{
+  "name": "pmpkpe",
+  "version": "1.0.0",
+  "description": "ProtonMail Private Key Passphrase Extractor",
+  "main": "index.js",
+  "dependencies": {
+    "atob": "^2.0.3",
+    "bcryptjs": "^2.4.3",
+    "bcrypt": "^1.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dexice/pmpkpe.git"
+  },
+  "keywords": [
+    "protonmail",
+    "privatekey",
+    "extract",
+    "passphrase"
+  ],
+  "author": "Stéphane Küng",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/dexice/pmpkpe/issues"
+  },
+  "homepage": "https://github.com/dexice/pmpkpe#readme"
+}
