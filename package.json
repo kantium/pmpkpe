@@ -8,7 +8,9 @@
     "bcryptjs": "^2.4.3",
     "bcrypt": "^1.0.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "private-repo": "git+ssh://git@github.com:dexice/pmpkpe.git#v1.0.0",
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
