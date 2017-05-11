@@ -10,7 +10,8 @@ Generate your Protonmail Private Key passphrase based on the KeySalt and MailBox
 
 1. Install node.js (https://nodejs.org/en/download/package-manager/)
 2. Install dependencies (see package.json)
-  * `npm install github:dexice/pmpkpe`
+  * `npm install atob`
+  * `npm install bcryptjs`
 3. Recover your KeySalt and PrivateKey (https://github.com/scastiel/protonmail-export)
 4. Edit index.js file (KeySalt and MailBoxPassword fields)
 5. run `node index.js` and get your passphrase
