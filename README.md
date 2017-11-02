@@ -26,7 +26,7 @@ npm install
 6. Execute this program against your saved salt, mailbox password, and private key
 
 ```
-node ./index.js -s ../salt.txt -k ../privatekey.txt -m ../mailboxpassword.txt
+node ./index.js -s ../salt.txt -m ../mailboxpassword.txt
 ```
 
 *enjoy*
