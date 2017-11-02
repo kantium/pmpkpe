@@ -15,11 +15,11 @@ let printHelp = function() {
   console.log('pmpkpe - Extract the password for your ProtonMail private key');
   console.log('');
   console.log('  Usage:');
-  console.log('      pmpkpe -s /path/to/salt.txt -k /path/to/private.key -m /path/to/mailboxpassword.txt');
+  console.log('      pmpkpe -s /path/to/salt.txt -m /path/to/mailboxpassword.txt');
 }
 
 let checkArgs = function() {
-  if(!program.salt || !program.privateKey || !program.mailboxPassword) {
+  if(!program.salt || !program.mailboxPassword) {
     printHelp();
     process.exit();
   }else{
@@ -34,15 +34,13 @@ let checkArgs = function() {
 let getValues = function() {
   return new Promise(function(resolve, reject) {
     try {
-      let p1 = readFile(program.privateKey);
-      let p2 = readFile(program.salt);
-      let p3 = readFile(program.mailboxPassword);
+      let p1 = readFile(program.salt);
+      let p2 = readFile(program.mailboxPassword);
 
-      Promise.all([p1,p2,p3]).then(values => {
+      Promise.all([p1,p2]).then(values => {
         resolve({
-          privateKey: (values[0].replace(/\\r\\n/g, '\n').replace(/\\n/g, '\n')),
-	  salt: values[1],
-	  mailboxPassword: values[2]
+	  salt: values[0],
+	  mailboxPassword: values[1]
 	});
       });
     }catch(err){
@@ -88,7 +86,6 @@ let readFile = function(file) {
 program
   .version('1.0.0')
   .option('-s --salt <saltFile>', 'Salt for key obtained from your browsers webtools')
-  .option('-k --privateKey <privateKeyFile>', 'Private key obtained from your browsers webtools')
   .option('-m --mailboxPassword <mailboxPasswordFile>', 'Mailbox password for protonmail, this is your first of two passwords when logging in')
   .option('-i, --importGpg', 'Import protonmail key into GPG after extraction')
   .parse(process.argv);
