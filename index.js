@@ -49,7 +49,7 @@ let getValues = function() {
   });
 }
 
-let binaryToStringArray = function(str) {
+let binaryStringToArray = function(str) {
         const bytes = new Uint8Array(str.length);
         for (let i = 0; i < str.length; i++) {
             bytes[i] = str.charCodeAt(i);
@@ -58,15 +58,8 @@ let binaryToStringArray = function(str) {
 }
 
 let getPassword = function(KeySalt, MailboxPassword) {
-  let trimmedSalt = (KeySalt.replace(/\r?\n|\r/)).trim();
-  const bytes = new Uint8Array(trimmedSalt.length);
-  for (let i = 0; i < trimmedSalt.length; i++) {
-    bytes[i] = trimmedSalt.charCodeAt(i);
-  }
-
-  let saltBinary = bytes;
-  let hash = bcryptjs.hashSync(MailboxPassword.replace(/\r?\n|\r/), '$2y$10$' + bcryptjs.encodeBase64(saltBinary, 16));
-
+  const saltBinary = binaryStringToArray(atob(KeySalt.trim()));
+  var hash = bcryptjs.hashSync(MailboxPassword, '$2y$10$' + bcryptjs.encodeBase64(saltBinary, 16));
   console.log(hash.slice(29));
 }
 
