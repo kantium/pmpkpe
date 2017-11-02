@@ -1,33 +1,18 @@
 {
   "name": "pmpkpe",
   "version": "1.0.0",
-  "description": "ProtonMail Private Key Passphrase Extractor",
+  "description": "Generate your Protonmail Private Key passphrase based on the KeySalt and MailBoxPassword",
   "main": "index.js",
-  "dependencies": {
-    "atob": "^2.0.3",
-    "bcryptjs": "^2.4.3",
-    "bcrypt": "^1.0.2"
-  },
-  "devDependencies": {
-    "private-repo": "git+ssh://git@github.com:dexice/pmpkpe.git#v1.0.0"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dexice/pmpkpe.git"
-  },
-  "keywords": [
-    "protonmail",
-    "privatekey",
-    "extract",
-    "passphrase"
-  ],
-  "author": "Stéphane Küng",
-  "license": "GPL-3.0",
-  "bugs": {
-    "url": "https://github.com/dexice/pmpkpe/issues"
-  },
-  "homepage": "https://github.com/dexice/pmpkpe#readme"
+  "author": "Kristopher Clark and kantium",
+  "license": "MIT",
+  "dependencies": {
+    "@maboiteaspam/show-help": "^3.0.0",
+    "atob": "^2.0.3",
+    "bcryptjs": "^2.4.3",
+    "commander": "^2.11.0",
+    "help-version": "^1.1.1"
+  }
 }
