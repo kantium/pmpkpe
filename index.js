@@ -67,7 +67,7 @@ let getPassword = function(KeySalt, MailboxPassword) {
   let saltBinary = bytes;
   let hash = bcryptjs.hashSync(MailboxPassword.replace(/\r?\n|\r/), '$2y$10$' + bcryptjs.encodeBase64(saltBinary, 16));
 
-  console.log(hash);
+  console.log(hash.slice(29));
 }
 
 let readFile = function(file) {

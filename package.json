@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "description": "Generate your Protonmail Private Key passphrase based on the KeySalt and MailBoxPassword",
   "main": "index.js",
+  "bin": {
+    "pmpkpe": "./index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Kristopher Clark and kantium",
+  "author": "Kristopher Clark",
   "license": "MIT",
   "dependencies": {
     "@maboiteaspam/show-help": "^3.0.0",
