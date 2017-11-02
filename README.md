@@ -14,7 +14,7 @@ Generate your Protonmail Private Key passphrase based on the KeySalt and MailBox
 4. cd into the newly cloned directory
 
 ```
-cd pmpke
+cd pmpkpe
 ```
 
 6. Install the dependencies
