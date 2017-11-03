@@ -10,23 +10,22 @@ Generate your Protonmail Private Key passphrase based on the KeySalt and MailBox
 
 1. Install node.js (https://nodejs.org/en/download/package-manager/)
 2. Recover your KeySalt and PrivateKey (https://github.com/scastiel/protonmail-export)
-3. Clone this project
+3. Install pmpkpe
+
+```
+npm install pmpkpe -g
+```
+ 
 4. cd into the newly cloned directory
 
 ```
 cd pmpkpe
 ```
 
-6. Install the dependencies
+5. Execute this program against your saved salt, mailbox password, and private key
 
 ```
-npm install
-```
-
-6. Execute this program against your saved salt, mailbox password, and private key
-
-```
-node ./index.js -s ../salt.txt -m ../mailboxpassword.txt
+pmpkpe -s ./salt.txt -m ./mailboxpassword.txt
 ```
 
 *enjoy*
