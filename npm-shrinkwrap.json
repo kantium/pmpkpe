@@ -1,0 +1,23 @@
+{
+  "name": "pmpkpe",
+  "version": "1.0.1",
+  "lockfileVersion": 1,
+  "requires": true,
+  "dependencies": {
+    "atob": {
+      "version": "2.0.3",
+      "resolved": "https://registry.npmjs.org/atob/-/atob-2.0.3.tgz",
+      "integrity": "sha1-GcenYEc3dEaPILLS0DNyrX1Mv10="
+    },
+    "bcryptjs": {
+      "version": "2.4.3",
+      "resolved": "https://registry.npmjs.org/bcryptjs/-/bcryptjs-2.4.3.tgz",
+      "integrity": "sha1-mrVie5PmBiH/fNrF2pczAn3x0Ms="
+    },
+    "commander": {
+      "version": "2.11.0",
+      "resolved": "https://registry.npmjs.org/commander/-/commander-2.11.0.tgz",
+      "integrity": "sha512-b0553uYA5YAEGgyYIGYROzKQ7X5RAqedkfjiZxwi0kL1g3bOaBNNZfYkzt/CL0umgD5wc9Jec2FbB98CjkMRvQ=="
+    }
+  }
+}
