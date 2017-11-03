@@ -1,6 +1,6 @@
 {
   "name": "pmpkpe",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Generate your Protonmail Private Key passphrase based on the KeySalt and MailBoxPassword",
   "main": "index.js",
   "bin": {
