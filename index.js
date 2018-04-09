@@ -59,7 +59,7 @@ let binaryStringToArray = function(str) {
 
 let getPassword = function(KeySalt, MailboxPassword) {
   const saltBinary = binaryStringToArray(atob(KeySalt.trim()));
-  var hash = bcryptjs.hashSync(MailboxPassword, '$2y$10$' + bcryptjs.encodeBase64(saltBinary, 16));
+  var hash = bcryptjs.hashSync(MailboxPassword.trim(), '$2y$10$' + bcryptjs.encodeBase64(saltBinary, 16));
   console.log(hash.slice(29));
 }
 
@@ -77,7 +77,7 @@ let readFile = function(file) {
 
 
 program
-  .version('1.0.0')
+  .version('1.0.3')
   .option('-s --salt <saltFile>', 'Salt for key obtained from your browsers webtools')
   .option('-m --mailboxPassword <mailboxPasswordFile>', 'Mailbox password for protonmail, this is your first of two passwords when logging in')
   .option('-i, --importGpg', 'Import protonmail key into GPG after extraction')
