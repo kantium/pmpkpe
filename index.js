@@ -7,25 +7,21 @@ const bcryptjs = require('bcryptjs');
 const atob     = require('atob');
 const fs       = require('fs');
 
-let saltContent            = '';
-let privateKeyContent      = '';
-let mailboxPasswordContent = '';
-
 const printHelp = function() {
-  console.log('pmpkpe - Extract the password for your ProtonMail private key');
-  console.log('');
-  console.log('  Usage:');
-  console.log('      pmpkpe -s /path/to/salt.txt -m /path/to/mailboxpassword.txt');
+  console.log(`pmpkpe - Extract the password for your ProtonMail private key
+
+  Usage:
+      pmpkpe -s /path/to/salt.txt -m /path/to/mailboxpassword.txt`);
 }
 
 const checkArgs = function() {
   if(!program.salt || !program.mailboxPassword) {
     printHelp();
     process.exit();
-  }else{
+  } else {
     getValues().then(function(values) {
       getPassword(values.salt,values.mailboxPassword);
-    }, function(err){
+    }, function(err) {
       console.log(err);
     });
   }
@@ -43,7 +39,7 @@ const getValues = function() {
           mailboxPassword: values[1]
         });
       });
-    }catch(err){
+    } catch(err) {
       reject(err);
     }
   });
@@ -59,7 +55,7 @@ const binaryStringToArray = function(str) {
 
 const getPassword = function(KeySalt, MailboxPassword) {
   const saltBinary = binaryStringToArray(atob(KeySalt.trim()));
-  var hash = bcryptjs.hashSync(MailboxPassword, '$2y$10$' + bcryptjs.encodeBase64(saltBinary, 16));
+  const hash = bcryptjs.hashSync(MailboxPassword.trim(), '$2y$10$' + bcryptjs.encodeBase64(saltBinary, 16));
   console.log(hash.slice(29));
 }
 
@@ -69,7 +65,7 @@ const readFile = function(file) {
       fs.readFile(file, 'utf8', function(err, contents) {
         resolve(contents);
       });
-    }catch(err){
+    } catch(err) {
       reject(err);
     }
   });
