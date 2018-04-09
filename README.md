@@ -4,6 +4,8 @@
 
 Generate your Protonmail Private Key passphrase based on the KeySalt and MailBoxPassword
 
+Special thanks to [krisclarkdev](https://github.com/krisclarkdev), [vinyll](https://github.com/vinyll), [Freebien](https://github.com/Freebien) and [jooray](https://github.com/jooray).
+
 ### How to get your passphrase
 
 1. Install node.js (https://nodejs.org/en/download/package-manager/)
