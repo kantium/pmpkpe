@@ -9,16 +9,17 @@ Special thanks to [krisclarkdev](https://github.com/krisclarkdev), [vinyll](http
 ### How to get your passphrase
 
 1. Install node.js (https://nodejs.org/en/download/package-manager/)
-2. Install pmpkpe
+2. Clone pmpkpe repo:
 
 ```
-npm install pmpkpe -g
+git clone git@github.com:kantium/pmpkpe.git
 ```
  
-3. cd into the newly cloned directory
+3. install required node modules:
 
 ```
-cd pmpkpe
+cd pmpkpe && npm install && npm update && cd ..
+
 ```
 
 4. Recover your KeySalt and PrivateKey-s for each of your addresses (see below)
@@ -29,7 +30,7 @@ two passwords or a single login password if you use the default
 recommended procedure of using just one password):
 
 ```
-pmpkpe -s ./salt.txt -m ./mailboxpassword.txt
+nodejs ./pmpkpe/index.js -s ./salt.txt -m ./mailboxpassword.txt
 ```
 
 6. The output of this program will be a passphrase that you can use to
@@ -37,7 +38,7 @@ decrypt all the private keys for all your addresses. You can import them
 using:
 
 ```
-gpg --import private-key.txt
+gpg --import private-key.asc
 ```
 
 for each key.
